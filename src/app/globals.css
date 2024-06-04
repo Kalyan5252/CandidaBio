@@ -33,6 +33,7 @@ html {
   /* @apply min-h-[100px] max-h-[100px] md:min-h-[300px] md:max-h-[300px]; */
 }
 .productBg {
+  padding: 1rem;
   background: linear-gradient(360deg, #98959c, #cbcbcb);
 }
 .slideBg {
@@ -60,7 +61,7 @@ html {
   filter: drop-shadow(-5px 10px 25px rgba(0, 0, 0, 0.5))
     drop-shadow(-10px 10px 35px rgba(24, 24, 24, 0.3))
     drop-shadow(-20px 10px 5px rgba(24, 24, 24, 0.3));
-  @apply max-h-[40vh] object-contain  md:max-h-[60vh];
+  @apply max-h-[30vh] max-w-[20vh] md:max-w-[40vh] object-contain  md:max-h-[60vh];
 }
 
 .productSlide {
@@ -149,7 +150,7 @@ html {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 }
 .firstSlide {
-  @apply lg:ml-[35rem] md:ml-[4rem];
+  @apply lg:ml-[35rem] md:ml-[14rem];
 }
 .lastSlide {
   margin-right: 20rem;
@@ -164,4 +165,44 @@ html {
 }
 .scrollNone::-webkit-scrollbar {
   display: none;
+}
+.formTitles {
+  @apply font-bold text-xl;
+}
+.formLabels {
+  @apply font-medium text-lg text-gray-800;
+}
+form input[type='text'],
+form input[type='password'],
+textarea {
+  @apply px-4 py-2 bg-gray-200 rounded-lg outline outline-[0.5px] outline-gray-400 resize-none;
+}
+form input[type='submit'] {
+  @apply px-4 py-2 rounded-lg bg-blue-600 text-white font-bold outline-blue-700 cursor-pointer hover:shadow-lg transition-all;
+}
+form .label {
+  @apply bg-blue-200 text-blue-600 w-fit p-2 rounded-lg cursor-pointer;
+}
+form input[type='submit'],
+form button,
+form .label {
+  @apply hover:scale-[105%] transition-all;
+}
+.addBtn {
+  @apply w-max justify-self-start self-start text-xl px-2 text-center text-blue-600 hover:bg-blue-300 rounded-lg;
+}
+.homeAgri::before {
+  z-index: 1000000;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #461487;
+}
+.productForm .productInput {
+  outline: none;
+  background: transparent;
+  @apply bg-transparent bg-none outline-[0];
 }

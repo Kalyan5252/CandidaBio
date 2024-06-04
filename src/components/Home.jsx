@@ -6,6 +6,7 @@ import Header from './Header';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductContext } from '@/app/context';
+import Contact from './Contact';
 
 export const Home = () => {
   const { category, setCategory } = useContext(ProductContext);
@@ -23,7 +24,7 @@ export const Home = () => {
         </div>
         <div className="grid grid-rows-2 h-full w-full">
           <div className="px-4 grid md:grid-cols-2 items-center justify-center gap-4">
-            <div className="w-full  flex flex-col justify-center items-center md:items-start leading-[7rem]">
+            <div className="w-full  flex flex-col justify-center items-center md:items-center leading-[7rem]">
               <h1 className="font-bold lg:text-[7rem] md:text-[4rem] text-[450%] uppercase">
                 Candida
               </h1>
@@ -61,7 +62,7 @@ export const Home = () => {
                     src="/images/PADDY.jpeg"
                     alt="img"
                     fill
-                    className="rounded-lg md:rounded-l-lg md:rounded-none"
+                    className="rounded-lg md:rounded-l-lg md:rounded-none homeAgri z-[0]"
                   />
                 </Link>
                 <Link
@@ -76,9 +77,10 @@ export const Home = () => {
                   </div>
                   <Image
                     src="/images/aqua.png"
+                    // src="/images/PADDY.jpeg"
                     alt="img"
                     fill
-                    className="md:rounded-r-lg rounded-lg md:rounded-none"
+                    className="relative md:rounded-r-lg rounded-lg md:rounded-none homeAqua"
                   />
                 </Link>
               </div>
@@ -87,7 +89,7 @@ export const Home = () => {
         </div>
       </div>
       <div className="w-full md:flex p-10 items-center justify-center md:min-h-[50vh]">
-        <p className="font-extrabold md:text-4xl text-center md:max-w-[30ch] md:leading-[4rem] leading-10">
+        <p className="md:font-extrabold font-bold md:text-4xl text-2xl text-center md:max-w-[30ch] md:leading-[4rem] leading-7">
           Promote organic farming methods and natural biotechnological
           formulations to enhance sustainability and benefit the aquaculture
           industry.
@@ -112,6 +114,9 @@ export const Home = () => {
       </div>
       <div className="w-full">
         <AboutUs />
+      </div>
+      <div className="md:px-8 py-4">
+        <Contact />
       </div>
     </main>
   );

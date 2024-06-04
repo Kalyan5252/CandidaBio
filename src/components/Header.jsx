@@ -20,7 +20,7 @@ const Header = () => {
   });
 
   return (
-    <div className="flex-between p-4 md:bg-transparent bg-black fixed top-0 left-0 w-full z-50">
+    <div className="flex-between p-4 md:bg-transparent bg-[#1e1e1e] fixed top-0 left-0 w-full z-50">
       {/* // <div className="flex-between p-4 bg-[#F9FBF2] fixed top-0 left-0 w-full z-10"> */}
       <Image
         src="/images/CandidaLogo-1.png"
@@ -29,7 +29,7 @@ const Header = () => {
         width={50}
         className={`rounded-full ${istop ? 'md:opacity-1' : 'md:opacity-0'}`}
       />
-      <div className="hidden md:flex bg-black z-40 md:shadow-lg md:flex-center gap-12 p-4 px-8 text-lg rounded-full text-gray-300 transition-all">
+      <div className="hidden md:flex bg-[#1e1e1e] z-40 md:shadow-lg md:flex-center gap-12 p-4 px-8 text-lg rounded-full text-gray-300 transition-all">
         <Link href="/" className="hover:text-white">
           Home
         </Link>
@@ -39,7 +39,7 @@ const Header = () => {
         <Link href="/products" className="hover:text-white">
           Products
         </Link>
-        <Link href="/contactUs" className="hover:text-white">
+        <Link href="/#contactUs" className="hover:text-white">
           Contact Us
         </Link>
       </div>
@@ -87,7 +87,7 @@ const Header = () => {
                   Products
                 </Link>
                 <Link
-                  href="/contactUs"
+                  href="/#contactUs"
                   className="hover:text-white"
                   onClick={handleNavbar}
                 >

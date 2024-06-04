@@ -9,7 +9,6 @@ const Slideshow = () => {
   useEffect(() => {
     const allSlides = document.querySelectorAll('.pSlide');
     const slideContainer = document.querySelector('.SlidesContainer');
-
     setSlides(allSlides.length);
     const updateSlides = () => {
       allSlides.forEach((el, i) => {
@@ -42,9 +41,9 @@ const Slideshow = () => {
       } else {
         slideContainer.style.transform = `translateX(0px)`;
       }
-      console.log(
-        allSlides[currentSlide % allSlides.length].getBoundingClientRect()
-      );
+      // console.log(
+      //   allSlides[currentSlide % allSlides.length].getBoundingClientRect()
+      // );
       setCurrentSlide((currentSlide + 1) % allSlides.length);
     };
     intervalRef.current = setInterval(updateSlides, 2000);
@@ -56,8 +55,8 @@ const Slideshow = () => {
   }, [currentSlide]);
 
   return (
-    <div className="overflow-x-scroll pointer-events-none mt-10">
-      <div className="md:w-max p-8 relative md:h-full SlidesContainer  flex gap-4 transition-all">
+    <div className="overflow-x-scroll pointer-events-none mt-10 scrollNone">
+      <div className="md:w-max p-8 relative md:h-full SlidesContainer  flex gap-4 transition-all scrollNone">
         {/* <div className="slideContainer"></div> */}
         <Image
           src="/images/CRD007.jpg"
@@ -66,22 +65,72 @@ const Slideshow = () => {
           width={300}
           className="pSlide activeSlide firstSlide transition-all"
         />
+
+        <Image
+          src="/images/CRD003.jpeg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
         <Image
           src="/images/CRD008.jpg"
           alt="slide"
           height={300}
           width={300}
-          className="pSlide deactivated rightSlide transition-all"
+          className="pSlide deactivated transition-all"
         />
         <Image
           src="/images/CRD009.jpg"
           alt="slide"
           height={300}
           width={300}
-          className="pSlide deactivated  transition-all"
+          className="pSlide deactivated transition-all"
         />
         <Image
           src="/images/CRD006.jpg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
+        <Image
+          src="/images/CRD001.jpg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
+        {/* <Image
+          src="/images/Cardamom Flower with Fruits.jpeg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        /> */}
+        <Image
+          src="/images/PADDY.jpeg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
+        <Image
+          src="/images/GRAPE.jpeg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
+        <Image
+          src="/images/Farmer.jpeg"
+          alt="slide"
+          height={300}
+          width={300}
+          className="pSlide deactivated transition-all"
+        />
+        <Image
+          src="/images/PADDY.jpeg"
           alt="slide"
           height={300}
           width={300}

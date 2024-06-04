@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
-const mongodbUri =
-  'mongodb+srv://developer:Candidabio@candid.4zpyxet.mongodb.net/?retryWrites=true&w=majority&appName=candid';
+const mongodbUri = process.env.MONGODB_URI;
+// const mongodbUri =
+//   'mongodb+srv://developer:Candidabio@candid.4zpyxet.mongodb.net/?retryWrites=true&w=majority&appName=candid';
 
 let cached = global.mongoose;
 

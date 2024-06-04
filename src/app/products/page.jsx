@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Products from '@/components/Products';
-import defaultLayout from '../defaultLayout';
+import defaultLayout from '../DefaultLayout';
 
 const page = () => {
   return (

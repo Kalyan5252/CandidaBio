@@ -36,13 +36,15 @@ const page = ({ params }) => {
           <div className="flex flex-col gap-12">
             <div className="block md:hidden">
               <h1 className="font-bold text-[300%]">{data.productName}</h1>
-              <h2 className="font-medium">{data.subTitle}</h2>
+              <h2 className="font-medium text-gray-500 text-sm max-w-[10rem]">
+                {data.subTitle}
+              </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4 h-full md:h-[80vh] md:overflow-hidden">
               <div className="productBg rounded-lg flex items-center justify-center">
                 <Image
-                  src={`/products/${data.productImage}`}
-                  alt=""
+                  src={`/products/${data?.productImage}`}
+                  alt="img"
                   height={300}
                   width={300}
                   className="pointer-events-none productImg"
@@ -55,7 +57,7 @@ const page = ({ params }) => {
                     <h1 className="font-bold text-[300%] md:block hidden">
                       {data.productName}
                     </h1>
-                    <h2 className="font-medium md:block hidden">
+                    <h2 className="font-medium md:block hidden text-gray-500 text-sm">
                       {data.subTitle}
                     </h2>
                     {data.packing && (
@@ -66,61 +68,68 @@ const page = ({ params }) => {
                     )}
                   </div>
 
-                  {data?.description && (
-                    <div className="flex flex-col gap-4 flex-1">
-                      <h2 className="font-bold text-xl">Description</h2>
-                      <div className="flex flex-col">
-                        <ul
-                          className={`flex flex-col gap-2 ${
-                            showMore ? 'h-full' : 'max-h-[7rem]'
-                          } overflow-hidden list-disc`}
-                        >
-                          {data.description.map((el, i) => (
-                            <li key={i} className="">
-                              {' · '}
-                              {data.description[i]}
-                            </li>
-                          ))}
-                        </ul>
-                        <button
-                          className="self-end text-gray-400 p-4 mt-[-1rem]"
-                          onClick={() => {
-                            setShowMore(!showMore);
-                          }}
-                        >
-                          {showMore ? 'show less' : 'show more'}
-                        </button>
+                  {data?.description[0] !== '' &&
+                    data?.description.length !== 0 && (
+                      <div className="flex flex-col gap-4 flex-1">
+                        <h2 className="font-bold text-xl">Description</h2>
+                        <div className="flex flex-col">
+                          <ul
+                            className={`flex flex-col gap-2 ${
+                              showMore ? 'h-full' : 'max-h-[7rem]'
+                            } overflow-hidden list-disc`}
+                          >
+                            {data.description.map((el, i) => {
+                              return (
+                                data.description[i] !== '' && (
+                                  <li key={i} className="">
+                                    {' · '}
+                                    {data.description[i]}
+                                  </li>
+                                )
+                              );
+                            })}
+                          </ul>
+                          <button
+                            className="self-end text-gray-400 p-4 mt-[-1rem]"
+                            onClick={() => {
+                              setShowMore(!showMore);
+                            }}
+                          >
+                            {showMore ? 'show less' : 'show more'}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  {data.compostiion.length !== 0 && (
-                    <div className="flex flex-col gap-4">
-                      <h1 className="font-bold text-xl">Composition</h1>
-                      <ul className="flex flex-col">
-                        {data.compostiion.map((el, i) => {
-                          if (el.title !== 'fr') {
-                            return (
-                              <li
-                                className={`flex justify-between items-center rounded-full `}
-                              >
-                                <p>{el.title}</p>
-                                <p>{el.value}</p>
-                              </li>
-                            );
-                          }
-                          if (el.title === 'fr') {
-                            return (
-                              <li
-                                className={`flex justify-between items-center rounded-full `}
-                              >
-                                <p>{el.value}</p>
-                              </li>
-                            );
-                          }
-                        })}
-                      </ul>
-                    </div>
-                  )}
+                    )}
+                  {data.compostiion.length !== 0 &&
+                    data.compostiion[0].value !== '' && (
+                      <div className="flex flex-col gap-4">
+                        <h1 className="font-bold text-xl">Composition</h1>
+                        <ul className="flex flex-col">
+                          {data.compostiion.map((el, i) => {
+                            if (el.title !== 'fr') {
+                              return (
+                                <li
+                                  key={i}
+                                  className={`flex justify-between items-center rounded-full `}
+                                >
+                                  <p>{el.title}</p>
+                                  <p>{el.value}</p>
+                                </li>
+                              );
+                            }
+                            if (el.title === 'fr') {
+                              return (
+                                <li
+                                  className={`flex justify-between items-center rounded-full `}
+                                >
+                                  <p>{el.value}</p>
+                                </li>
+                              );
+                            }
+                          })}
+                        </ul>
+                      </div>
+                    )}
                 </div>
                 <div className="p-4 justify-self-start">
                   <button className="font-bold rounded-lg bg-black text-white p-4 w-full hover:shadow-lg transition-all">
@@ -131,7 +140,7 @@ const page = ({ params }) => {
             </div>
             <div className="flex flex-col gap-4">
               <h1 className="font-bold text-2xl">Product Hightlights</h1>
-              <div className="flex items-center gap-4 p-8">
+              <div className="flex items-center gap-4 ">
                 <Image
                   src="/images/ecofriendly.png"
                   alt="img"
@@ -146,50 +155,50 @@ const page = ({ params }) => {
                 />
               </div>
             </div>
-            <div className="grid md:grid-flow-col md:grid-cols-4 p-4 gap-4">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 p-4 gap-4">
               {['benefits', 'moa', 'details', 'precautions'].map((el) => {
-                if (data[el] != '')
+                if (data[el] != '' && data[el][0]?.value != '')
                   return (
-                    <div className="flex flex-col md:min-h-[20rem] bg-[#F5F5F5] items-center shadow-lg border-[1px] border-[#5E6572] p-4 rounded-lg">
+                    <div
+                      key={el}
+                      className="flex flex-col md:min-h-[20rem] bg-[#F5F5F5] items-center shadow-lg border-[1px] border-[#5E6572] p-4 rounded-lg"
+                    >
                       <h1 className="font-bold text-xl capitalize mb-4">
                         {titles[el]}
                       </h1>
                       <div className="flex flex-col gap-2">
-                        {data[el].map((el) => {
-                          if (typeof el === 'string')
+                        {data[el].map((ele) => {
+                          // typeof el === 'object' && el.value !== '' ? (
+                          //   <p key={el}>
+                          //     {'· '}
+                          //     {el.value}
+                          //   </p>
+                          // ) : (
+                          //   <p key={el}>
+                          //     {'· '}
+                          //     {el}
+                          //   </p>
+                          // )
+                          if (typeof ele === 'string')
                             return (
-                              <p>
+                              <p key={ele}>
                                 {'· '}
-                                {el}
+                                {ele}
                               </p>
                             );
-                          if (typeof el === 'object') {
+                          if (typeof ele === 'object' && ele.value !== '')
                             return (
-                              <p>
+                              <p key={ele}>
                                 {'· '}
-                                {el.value}
+                                {ele.value}
                               </p>
                             );
-                          }
                         })}
                       </div>
                     </div>
                   );
               })}
             </div>
-            {/* {data.precautions.length !== 0 && (
-              <div className="p-4 flex flex-col gap-4">
-                <h1 className="font-bold text-xl">Precautions</h1>
-                <ul>
-                  {data.precautions.map((el) => (
-                    <li>
-                      {'· '}
-                      {el}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )} */}
           </div>
         )}
         {!data && (
