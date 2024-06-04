@@ -1,10 +1,10 @@
 import { Home } from '@/components/Home';
-import defaultLayout from './DefaultLayout';
+import DefaultLayout from './defaultLayout';
 
 export default function page() {
   return (
-    <defaultLayout>
+    <DefaultLayout>
       <Home />
-    </defaultLayout>
+    </DefaultLayout>
   );
 }

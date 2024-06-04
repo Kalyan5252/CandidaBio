@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Products from '@/components/Products';
-import defaultLayout from '../DefaultLayout';
+import DefaultLayout from '../defaultLayout';
 
 const page = () => {
   return (
-    <defaultLayout>
+    <DefaultLayout>
       <main className="pt-25">
         <Header />
         <Products />
       </main>
-    </defaultLayout>
+    </DefaultLayout>
   );
 };
 
