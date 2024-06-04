@@ -9,7 +9,6 @@ import { useRouter } from 'next/navigation';
 
 const Products = () => {
   const router = useRouter();
-  // const [category, setCategory] = useState('agri');
   const { category, setCategory } = useContext(ProductContext);
   // DATA FETCHED FROM DB
   const [data, setData] = useState(null);
@@ -37,8 +36,6 @@ const Products = () => {
       setData(actualData);
       return;
     }
-
-    console.log('this is actual', actualData);
     const newData = [];
     actualData.products.map((el) => {
       const words = el.productName.split(' ');
@@ -51,7 +48,6 @@ const Products = () => {
         }
       });
     });
-    console.log({ products: newData });
     setData({ products: newData });
   };
 

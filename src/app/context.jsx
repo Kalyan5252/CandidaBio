@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const ProductContext = createContext();
 

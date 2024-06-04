@@ -120,6 +120,7 @@ const page = ({ params }) => {
                             if (el.title === 'fr') {
                               return (
                                 <li
+                                  key={i}
                                   className={`flex justify-between items-center rounded-full `}
                                 >
                                   <p>{el.value}</p>

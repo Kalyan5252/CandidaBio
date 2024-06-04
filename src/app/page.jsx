@@ -1,10 +1,7 @@
+'use client';
+import React, { useState, useContext } from 'react';
 import { Home } from '@/components/Home';
-import DefaultLayout from './defaultLayout';
 
 export default function page() {
-  return (
-    <DefaultLayout>
-      <Home />
-    </DefaultLayout>
-  );
+  return <Home />;
 }

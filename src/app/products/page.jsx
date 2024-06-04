@@ -1,16 +1,17 @@
+'use client';
 import React from 'react';
 import Header from '@/components/Header';
 import Products from '@/components/Products';
-import DefaultLayout from '../defaultLayout';
+
+import { useState, useContext } from 'react';
+import { ProductContext } from '@/app/context';
 
 const page = () => {
   return (
-    <DefaultLayout>
-      <main className="pt-25">
-        <Header />
-        <Products />
-      </main>
-    </DefaultLayout>
+    <main className="pt-25">
+      <Header />
+      <Products />
+    </main>
   );
 };
 

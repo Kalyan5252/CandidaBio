@@ -5,11 +5,12 @@ import AboutUs from './AboutUs';
 import Header from './Header';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProductContext } from '@/app/context';
 import Contact from './Contact';
+import { ProductContext } from '@/app/context';
 
 export const Home = () => {
   const { category, setCategory } = useContext(ProductContext);
+
   return (
     <main className="overflow-hidden">
       <Header />
@@ -77,7 +78,6 @@ export const Home = () => {
                   </div>
                   <Image
                     src="/images/aqua.png"
-                    // src="/images/PADDY.jpeg"
                     alt="img"
                     fill
                     className="relative md:rounded-r-lg rounded-lg md:rounded-none homeAqua"
