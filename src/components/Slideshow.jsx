@@ -36,7 +36,9 @@ const Slideshow = () => {
               .x + allSlides[0].getBoundingClientRect().x
           }px)`;
         } else {
-          slideContainer.style.transform = `translateX(-${90 * currentSlide}%)`;
+          slideContainer.style.transform = `translateX(-${
+            87.8 * currentSlide
+          }%)`;
         }
       } else {
         slideContainer.style.transform = `translateX(0px)`;
