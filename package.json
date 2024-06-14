@@ -14,6 +14,7 @@
     "@mui/base": "^5.0.0-beta.40",
     "@mui/material": "^5.15.18",
     "@mui/system": "^5.15.15",
+    "aws-sdk": "^2.1637.0",
     "body-parser": "^1.20.2",
     "formidable": "^3.5.1",
     "jose": "^5.4.0",
@@ -29,6 +30,7 @@
     "react-toastify": "^10.0.5",
     "react-transition-group": "^4.4.5",
     "sooner": "^1.1.4",
+    "stream": "^0.0.2",
     "toaster": "^0.1.2"
   },
   "devDependencies": {

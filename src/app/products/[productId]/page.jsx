@@ -13,6 +13,7 @@ const page = ({ params }) => {
   };
   const [data, setData] = useState(null);
   const [showMore, setShowMore] = useState(false);
+  const [imageUrl, setImageUrl] = useState('');
 
   useEffect(() => {
     const getData = async () => {
@@ -28,6 +29,17 @@ const page = ({ params }) => {
     };
     getData();
   }, []);
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      const response = await fetch(`/api/aws/${data.productImage}`);
+      const imgLink = await response.json();
+      setImageUrl(imgLink.url);
+    };
+
+    data && data.imgLoc !== 'local' && fetchImage();
+  });
+
   return (
     <main className="pt-24">
       <Header />
@@ -43,7 +55,11 @@ const page = ({ params }) => {
             <div className="grid md:grid-cols-2 gap-4 h-full md:h-[80vh] md:overflow-hidden">
               <div className="productBg rounded-lg flex items-center justify-center">
                 <Image
-                  src={`/products/${data?.productImage}`}
+                  src={`${
+                    data.imgLoc === 'local'
+                      ? '/products/' + data.productImage
+                      : imageUrl || ''
+                  }`}
                   alt="img"
                   height={300}
                   width={300}
@@ -167,7 +183,7 @@ const page = ({ params }) => {
                       <h1 className="font-bold text-xl capitalize mb-4">
                         {titles[el]}
                       </h1>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-2 w-full">
                         {data[el].map((ele) => {
                           // typeof el === 'object' && el.value !== '' ? (
                           //   <p key={el}>

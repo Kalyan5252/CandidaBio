@@ -30,6 +30,10 @@ const productSchema = mongoose.Schema({
     },
   ],
   images: [String],
+  imgLoc: {
+    type: String,
+    default: 'cloud',
+  },
 });
 
 // const products = mongoose.model('products', productSchema);

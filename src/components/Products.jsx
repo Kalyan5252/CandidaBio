@@ -51,6 +51,28 @@ const Products = () => {
     setData({ products: newData });
   };
 
+  const [signedUrls, setSignedUrls] = useState({});
+
+  useEffect(() => {
+    const fetchSignedUrls = async () => {
+      const urls = {};
+      // console.log('ac:', actualData.products);
+      const s3Images = actualData.products.filter(
+        (el) => el.imgLoc !== 'local'
+      );
+      const promises = s3Images.map(async (el) => {
+        const response = await fetch(`/api/aws/${el.productImage}`);
+        const data = await response.json();
+        urls[el.productImage] = data.url;
+      });
+
+      await Promise.all(promises);
+      setSignedUrls(urls);
+    };
+
+    actualData?.products && fetchSignedUrls();
+  }, [actualData]);
+
   return (
     <div className="flex flex-col gap-8">
       <div className="relative mt-[5rem] h-max  p-4 md:px-12">
@@ -119,7 +141,11 @@ const Products = () => {
               >
                 <div className="productImage px-4 text-white">
                   <Image
-                    src={`/products/${el.productImage}`}
+                    src={`${
+                      el.imgLoc === 'local'
+                        ? '/products/' + el.productImage
+                        : signedUrls[el.productImage] || ''
+                    }`}
                     // src={`/products/product_1.png`}
                     alt="pimg"
                     height={200}

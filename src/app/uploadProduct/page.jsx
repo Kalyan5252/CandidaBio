@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const page = () => {
   const router = useRouter();
@@ -25,6 +26,7 @@ const page = () => {
     window.location.reload();
   };
 
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
   const [type, setType] = useState('agri');
@@ -59,6 +61,8 @@ const page = () => {
     // console.log(file);
     // console.log('submitted');
 
+    setLoading(true);
+
     const data = {
       productName: name,
       type,
@@ -80,9 +84,9 @@ const page = () => {
     });
     if (res.ok) {
       setTimeout(() => {
-        handleReload;
+        window.location.reload();
       }, 2000);
-      return toast('Product Uploaded Successfully!!!', {
+      toast('Product Uploaded Successfully!!!', {
         position: 'top-center',
         autoClose: 2000,
         pauseOnHover: false,
@@ -90,9 +94,9 @@ const page = () => {
       });
     } else {
       setTimeout(() => {
-        handleReload;
+        window.location.reload();
       }, 2000);
-      return toast('Error Occured!!!', {
+      toast('Error Occured!!!', {
         position: 'top-center',
         autoClose: 2000,
         pauseOnHover: false,
@@ -360,7 +364,13 @@ const page = () => {
               </button>
             </div>
 
-            <input type="submit" value="Submit" />
+            {loading ? (
+              <div className="flex items-center justify-center">
+                <CircularProgress />
+              </div>
+            ) : (
+              <input type="submit" value="Submit" />
+            )}
           </form>
         </div>
       </div>
