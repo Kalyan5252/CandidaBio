@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const mongodbUri = process.env.NEXT_PUBLIC_MONGODB_URI;
+const mongodbUri = process.env.MONGODB_URI;
 console.log('mongodburi: ', mongodbUri);
 // const mongodbUri =
 //   'mongodb+srv://developer:Candidabio@candid.4zpyxet.mongodb.net/?retryWrites=true&w=majority&appName=candid';
