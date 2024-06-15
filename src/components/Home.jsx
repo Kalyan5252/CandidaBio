@@ -78,8 +78,7 @@ export const Home = () => {
       <div className="mt-[-120px] md:mt-0 w-full md:flex p-10 items-center justify-center md:min-h-[50vh] text-[#D0D0D0] bg-[#07141C]">
         <p className="md:font-extrabold font-medium md:text-4xl text-xl text-left md:text-center md:max-w-[30ch] md:leading-[4rem] leading-[2rem]">
           Promote organic farming methods and natural biotechnological
-          formulations to enhance sustainability and benefit the aquaculture
-          industry.
+          formulations to enhance sustainability and benefit the aquaculture.
         </p>
       </div>
       <div
