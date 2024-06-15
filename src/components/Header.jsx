@@ -6,6 +6,7 @@ import Link from 'next/link';
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const [istop, setIsTop] = useState(true);
+  const [isMobile, setisMobile] = useState(false);
   const handleNavbar = () => {
     setNavbar(!navbar);
   };
@@ -20,16 +21,30 @@ const Header = () => {
   });
 
   return (
-    <div className="flex-between p-4 md:bg-transparent bg-[#1e1e1e] fixed top-0 left-0 w-full z-50">
+    <div
+      className={`${
+        istop
+          ? 'bg-[#1e1e1e] flex-between'
+          : 'bg-[#1e1e1e] flex flex-between  md:bg-transparent md:justify-center'
+      } p-4 fixed top-0 left-0 w-full z-50`}
+    >
       {/* // <div className="flex-between p-4 bg-[#F9FBF2] fixed top-0 left-0 w-full z-10"> */}
       <Image
         src="/images/CandidaLogo-1.png"
         alt="logo"
         height={50}
         width={50}
-        className={`rounded-full ${istop ? 'md:opacity-1' : 'md:opacity-0'}`}
+        className={`rounded-full hidden md:block ${
+          istop ? 'md:opacity-1' : 'md:opacity-0'
+        }`}
       />
-      <div className="hidden md:flex bg-[#1e1e1e] z-40 md:shadow-lg md:flex-center gap-12 p-4 px-8 text-lg rounded-full text-gray-300 transition-all">
+      <div
+        className={`hidden md:flex ${
+          istop
+            ? 'bg-[#1e1e1e] text-[#d0d0d0]'
+            : 'bg-[rgba(208,208,208,.6)] backdrop-blur-sm text-[#1e1e1e]'
+        } z-40 md:shadow-2xl md:flex-center gap-12 p-4 text-lg rounded-lg transition-all`}
+      >
         <Link href="/" className="hover:text-white">
           Home
         </Link>
@@ -43,7 +58,13 @@ const Header = () => {
           Contact Us
         </Link>
       </div>
-      <div className=""></div>
+      <div
+        className={`${
+          istop ? 'block' : 'md:hidden'
+        } text-gray-300 font-bold text-2xl`}
+      >
+        Candida
+      </div>
       <div className="block md:hidden ">
         <button onClick={handleNavbar}>
           <Image src="/icons/menu.svg" alt="menu" height={25} width={25} />

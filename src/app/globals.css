@@ -97,6 +97,7 @@ html {
 }
 .sceneground {
   position: absolute;
+  /* color: rgb(208, 208, 208); */
   background: radial-gradient(rgba(205, 205, 205, 0.5), rgba(110, 110, 110));
   border-radius: 9999px;
   width: 100%;

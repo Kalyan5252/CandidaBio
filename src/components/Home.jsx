@@ -25,21 +25,24 @@ export const Home = () => {
         </div>
         <div className="grid grid-rows-2 h-full w-full">
           {/* <div className="px-4 items-center justify-center gap-4"> */}
-          <div className="w-full flex flex-col justify-center items-center gap-4">
-            <h1 className="flex items-center flex-col font-bold lg:text-[7rem] md:text-[4rem] text-[450%] uppercase text-white">
-              Candida
-              <span className="text-xl font-light">Bio Sciences</span>
-            </h1>
-            <div className="flex gap-4">
+          <div className="w-full flex self-end p-8 flex-col justify-center items-center gap-8 md:gap-4">
+            <div className="flex flex-col items-center">
+              <h1 className="flex items-center flex-col font-bold lg:text-[3rem] text-[2rem] text-center md:text-[4rem] uppercase text-white">
+                Organic solutions for <br />
+                aquaculture & Agriculture
+              </h1>
+              {/* <h2 className="text-xl font-light">Bio Sciences</h2> */}
+            </div>
+            <div className="flex gap-4 flex-col md:flex-row">
               <Link
                 href="/products"
-                className="p-4 bg-[#5FA53E] rounded-full text-black"
+                className="p-4 bg-[#5FA53E] rounded-full text-black text-center"
               >
                 <button>Explore Products</button>
               </Link>
               <Link
                 href="/#contactUs"
-                className="p-4 outline outline-[#5FA53E] text-[#5FA53E] rounded-full"
+                className="p-4 outline outline-[#5FA53E] text-[#5FA53E] rounded-full text-center"
               >
                 <button>Contact Us</button>
               </Link>
@@ -60,7 +63,7 @@ export const Home = () => {
               </p>
             </div> */}
           {/* </div> */}
-          <div className="h-3/6 md:h-full px-24 flex">
+          <div className="w-full h-3/6 md:h-full px-8 md:px-24 flex">
             <div className="h-full w-full rounded-lg relative">
               <Image
                 src="/images/heroPaddy.jpeg"
