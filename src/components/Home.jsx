@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <main className="overflow-hidden">
       <Header />
-      <div className="mt-[5rem] md:mt-0 w-full h-[100vh] text-[#D0D0D0] bg-[#07141C] flex-center">
+      <div className="mt-[3rem] md:mt-0 w-full h-[100vh] text-[#D0D0D0] bg-[#07141C] flex-center">
         <div className="pattern opacity-5 z-[-10]">
           <Image
             src="/patterns/cocoa green.png"
@@ -25,9 +25,9 @@ export const Home = () => {
         </div>
         <div className="grid grid-rows-2 h-full w-full">
           {/* <div className="px-4 items-center justify-center gap-4"> */}
-          <div className="w-full flex self-end p-8 flex-col justify-center items-center gap-8 md:gap-4">
+          <div className="w-full flex self-end p-12 flex-col justify-center items-center gap-8 md:gap-4">
             <div className="flex flex-col items-center">
-              <h1 className="flex items-center flex-col font-bold lg:text-[3rem] text-[2rem] text-center md:text-[4rem] uppercase text-white">
+              <h1 className=" flex p-4 items-center flex-col font-bold lg:text-[3rem] text-[2rem] text-center md:text-[4rem] uppercase text-white">
                 Organic solutions for <br />
                 aquaculture & Agriculture
               </h1>
@@ -76,7 +76,7 @@ export const Home = () => {
         </div>
       </div>
       <div className="mt-[-120px] md:mt-0 w-full md:flex p-10 items-center justify-center md:min-h-[50vh] text-[#D0D0D0] bg-[#07141C]">
-        <p className="md:font-extrabold font-bold md:text-4xl text-2xl text-center md:max-w-[30ch] md:leading-[4rem] leading-[3rem]">
+        <p className="md:font-extrabold font-medium md:text-4xl text-xl text-left md:text-center md:max-w-[30ch] md:leading-[4rem] leading-[2rem]">
           Promote organic farming methods and natural biotechnological
           formulations to enhance sustainability and benefit the aquaculture
           industry.
@@ -99,9 +99,9 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
+      {/* <div className="w-full">
         <AboutUs />
-      </div>
+      </div> */}
       <div className="md:px-8 py-4">
         <Contact />
       </div>

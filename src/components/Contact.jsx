@@ -53,7 +53,7 @@ const Contact = () => {
         <div className="md:p-4 flex flex-col  md:gap-2  gap-4 bg-[rgba(255,255,255,0.2)] rounded-lg">
           <div className="p-4 flex gap-4 items-center rounded-lg ">
             <div className="bg-gray-200 p-4 rounded-full">
-              <Image src="/icons/mail.png" alt="mail" height={30} width={30} />
+              <Image src="/icons/mail.png" alt="mail" height={22} width={22} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-bold">Email</h2>
@@ -69,7 +69,7 @@ const Contact = () => {
           </div>
           <div className="p-4 flex gap-4 items-center rounded-lg ">
             <div className="bg-gray-200 p-4 rounded-full">
-              <Image src="/icons/phone.png" alt="call" height={30} width={30} />
+              <Image src="/icons/phone.png" alt="call" height={22} width={22} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-bold">Phone</h2>
@@ -81,8 +81,8 @@ const Contact = () => {
               <Image
                 src="/icons/location.png"
                 alt="pin"
-                height={30}
-                width={30}
+                height={22}
+                width={22}
               />
             </div>
             <div className="flex flex-col">
@@ -94,7 +94,7 @@ const Contact = () => {
           </div>
           <div className="p-4 flex gap-4 items-center rounded-lg ">
             <div className="bg-gray-200 p-4 rounded-full">
-              <Image src="/icons/link.png" alt="pin" height={30} width={30} />
+              <Image src="/icons/link.png" alt="pin" height={22} width={22} />
             </div>
             <div className="flex flex-col">
               <h2 className="font-bold">GoogleMaps</h2>
