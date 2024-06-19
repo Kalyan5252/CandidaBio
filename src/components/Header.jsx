@@ -24,7 +24,7 @@ const Header = () => {
     <div
       className={`${
         istop
-          ? 'bg-[#1e1e1e] flex-between'
+          ? 'bg-[#07141C] flex-between'
           : 'bg-[#1e1e1e] flex flex-between  md:bg-transparent md:justify-center'
       } p-4 fixed top-0 left-0 w-full z-50`}
     >
@@ -41,14 +41,14 @@ const Header = () => {
       <div
         className={`hidden md:flex ${
           istop
-            ? 'bg-[#1e1e1e] text-[#d0d0d0]'
-            : 'bg-[rgba(208,208,208,.6)] backdrop-blur-sm text-[#1e1e1e]'
+            ? 'bg-transparent text-[#d0d0d0]'
+            : 'bg-[rgba(30,30,30,0.9)] backdrop-blur-sm text-[#d0d0d0]'
         } z-40 md:shadow-2xl md:flex-center gap-12 p-4 text-lg rounded-lg transition-all`}
       >
         <Link href="/" className="hover:text-white">
           Home
         </Link>
-        <Link href="/#aboutUs" className="hover:text-white">
+        <Link href="/aboutUs" className="hover:text-white">
           About Us
         </Link>
         <Link href="/products" className="hover:text-white">
@@ -94,7 +94,7 @@ const Header = () => {
                   Home
                 </Link>
                 <Link
-                  href="/#aboutUs"
+                  href="/aboutUs"
                   className="hover:text-white"
                   onClick={handleNavbar}
                 >

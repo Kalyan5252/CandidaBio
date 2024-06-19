@@ -43,11 +43,11 @@ const Contact = () => {
             <div className="w-[10rem] h-[1px] bg-white"></div>
           </div>
           <a
-            href="https://wa.me/qr/5ERJZRHCAA7DK1"
+            href="mailto:cbsaquaa@gmail.com"
             className="text-green-500 hover:underline text-center"
-            target="_blank"
+            // target="_blank"
           >
-            https://wa.me/qr/5ERJZRHCAA7DK1
+            click here to mail us
           </a>
         </div>
         <div className="md:p-4 flex flex-col  md:gap-2  gap-4 bg-[rgba(255,255,255,0.2)] rounded-lg">
@@ -59,8 +59,8 @@ const Contact = () => {
               <h2 className="font-bold">Email</h2>
               <a
                 className="font-light"
-                href="cbsaquaa@gmail.com"
-                target="_blank"
+                href="mailto:cbsaquaa@gmail.com"
+                // target="_blank"
                 type="email"
               >
                 cbsaquaa@gmail.com
@@ -73,7 +73,7 @@ const Contact = () => {
             </div>
             <div className="flex flex-col">
               <h2 className="font-bold">Phone</h2>
-              <h2 className="font-light">+91 1234567890</h2>
+              <h2 className="font-light">+91 9440278604</h2>
             </div>
           </div>
           <div className="p-4 flex gap-4 items-center rounded-lg ">

@@ -74,8 +74,8 @@ const Products = () => {
   }, [actualData]);
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="relative mt-[5rem] h-max  p-4 md:px-12">
+    <div className="flex flex-col gap-8 mt-[5rem] md:mt-[7rem]">
+      <div className="relative  h-max  p-4 md:px-12">
         <Slideshow />
         <div className="absolute md:z-40 top-3 md:top-1 right-5 shadow-lg flex-center gap-4 px-4 py-2 rounded-full bg-[#C2C0C0] transition-all">
           <button
