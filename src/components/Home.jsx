@@ -36,13 +36,13 @@ export const Home = () => {
             <div className="flex flex-col md:flex-row gap-4">
               <Link
                 href="/products"
-                className="p-4 bg-[#5FA53E] rounded-full text-sm md:text-lg text-black text-center"
+                className="p-4 bg-[#5FA53E] flex-center rounded-full text-sm md:text-lg text-black text-center"
               >
                 <button>Explore Products</button>
               </Link>
               <Link
                 href="/#contactUs"
-                className="p-4 outline outline-[#5FA53E] text-[#5FA53E] rounded-full text-center"
+                className="p-4 flex-center outline outline-[#5FA53E] text-[#5FA53E] rounded-full"
               >
                 <button>Contact Us</button>
               </Link>
