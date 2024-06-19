@@ -1,10 +1,10 @@
 import S3 from 'aws-sdk/clients/s3';
 import fs from 'fs';
 
-const bucketName = process.env.AWS_BUCKET_NAME;
-const region = process.env.AWS_BUCKET_REGION;
-const accessKeyId = process.env.AWS_ACCESS_KEY;
-const secretAccessKey = process.env.AWS_SECRET_KEY;
+const bucketName = process.env.BUCKET_NAME;
+const region = process.env.BUCKET_REGION;
+const accessKeyId = process.env.ACCESS_KEY;
+const secretAccessKey = process.env.AS_SECRET_KEY;
 
 const s3 = new S3({
   region,
@@ -20,8 +20,8 @@ export async function upload(fileBuffer, name) {
     Body: fileBuffer,
     Key: name,
   };
-  console.log('AWS_BUCKET_NAME:', process.env.AWS_BUCKET_NAME);
-  console.log('AWS_BUCKET_REGION:', process.env.AWS_BUCKET_REGION);
+  console.log('AWS_BUCKET_NAME:', bucketName);
+  console.log('AWS_BUCKET_REGION:', region);
   // console.log('AWS_ACCESS_KEY:', process.env.AWS_ACCESS_KEY);
   // console.log('AWS_SECRET_KEY:', process.env.AWS_SECRET_KEY);
   try {
