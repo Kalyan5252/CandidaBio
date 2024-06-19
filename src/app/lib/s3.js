@@ -13,15 +13,17 @@ const s3 = new S3({
 });
 
 export async function upload(fileBuffer, name) {
-  //   console.log(bucketName, bucketRegion, accessKey, secretKey);
-  console.log('got before fileStream');
   //   const fileStream = fs.createReadStream(file);
-  console.log('got fileStream');
+  console.log('got into fileStream');
   const uploadParams = {
     Bucket: bucketName,
     Body: fileBuffer,
     Key: name,
   };
+  console.log('AWS_BUCKET_NAME:', process.env.AWS_BUCKET_NAME);
+  console.log('AWS_BUCKET_REGION:', process.env.AWS_BUCKET_REGION);
+  console.log('AWS_ACCESS_KEY:', process.env.AWS_ACCESS_KEY);
+  console.log('AWS_SECRET_KEY:', process.env.AWS_SECRET_KEY);
   try {
     return await s3.upload(uploadParams).promise();
   } catch (err) {
