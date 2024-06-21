@@ -9,16 +9,13 @@ const Contact = () => {
     >
       <div>
         <h1 className="font-bold text-4xl">Contact Us</h1>
-        <h2 className="text-gray-500">
-          Here are few ways to get in touch with us
-        </h2>
       </div>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-4 ">
           <div className="flex">
-            <h1 className="text-2xl font-medium">
+            <h1 className="text-2xl font-medium ">
               Connect with us via{' '}
-              <span className="text-green-500 font-extrabold">WhatsApp</span>
+              <span className="text-white font-extrabold">Mail</span>
             </h1>
             <Image
               src="/icons/arrow.png"
@@ -44,7 +41,7 @@ const Contact = () => {
           </div>
           <a
             href="mailto:cbsaquaa@gmail.com"
-            className="text-green-500 hover:underline text-center"
+            className="text-white hover:underline text-center"
             // target="_blank"
           >
             click here to mail us

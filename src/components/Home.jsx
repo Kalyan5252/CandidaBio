@@ -7,27 +7,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Contact from './Contact';
 import { ProductContext } from '@/app/context';
+import { GeistSans } from 'geist/font/sans';
 
 export const Home = () => {
   const { category, setCategory } = useContext(ProductContext);
 
   return (
-    <main className="overflow-hidden bg-[#07141C]">
+    <main className={`overflow-hidden bg-[#07141C] ${GeistSans.className}`}>
       <Header />
-      <div className="mt-[5rem] md:mt-[7rem] w-full h-full text-[#D0D0D0] bg-[#07141C] flex-center">
-        <div className="pattern opacity-5 z-[-10]">
+      <div className="mt-[5rem] md:mt-[6rem] w-full h-full text-[#D0D0D0] bg-[#07141C] flex-center">
+        {/* <div className="pattern opacity-5 z-[-10]">
           <Image
             src="/patterns/cocoa green.png"
             alt=""
             fill
             className="pointer-events-none"
           />
-        </div>
+        </div> */}
         <div className="grid grid-rows-1 w-full gap-4">
           {/* <div className="px-4 items-center justify-center gap-4"> */}
           <div className="w-full flex p-12 flex-col justify-center items-center gap-8 md:gap-4">
             <div className="flex flex-col items-center">
-              <h1 className=" flex p-4 items-center flex-col font-bold lg:text-[3rem] text-[1.5rem] text-center md:text-[2rem] uppercase text-white">
+              <h1 className="flex p-4 items-center flex-col font-bold lg:text-[4rem] text-[1.5rem] text-center md:text-[2rem] uppercase text-white">
                 Organic solutions for <br />
                 aquaculture & Agriculture
               </h1>
@@ -36,13 +37,13 @@ export const Home = () => {
             <div className="flex flex-col md:flex-row gap-4">
               <Link
                 href="/products"
-                className="p-4 bg-[#5FA53E] flex-center rounded-full text-sm md:text-lg text-black text-center"
+                className="px-4 py-3 bg-[#5FA53E] flex-center rounded-lg text-sm md:text-lg text-black text-center"
               >
-                <button>Explore Products</button>
+                <button>Our Products</button>
               </Link>
               <Link
                 href="/#contactUs"
-                className="p-4 flex-center outline outline-[#5FA53E] text-[#5FA53E] rounded-full"
+                className="px-4 py-3 flex-center outline outline-[#5FA53E] text-[#5FA53E] rounded-lg"
               >
                 <button>Contact Us</button>
               </Link>
@@ -95,15 +96,15 @@ export const Home = () => {
       </div>
 
       <div className="md:mt-0 w-full md:flex p-10 items-center justify-center md:min-h-[50vh] text-[#D0D0D0] bg-[#07141C]">
-        <p className="md:font-extrabold font-medium md:text-4xl text-xl text-left md:text-center md:max-w-[30ch] md:leading-[4rem] leading-[2rem]">
+        <p className="font-medium md:text-4xl text-xl text-left md:text-center md:max-w-[30ch] md:leading-[4rem] leading-[2rem]">
           Promote organic farming methods and natural biotechnological
           formulations to enhance sustainability and benefit the agriculture &
           aquaculture.
         </p>
       </div>
-      {/* <div className="w-full">
+      <div className="w-full bg-white">
         <AboutUs />
-      </div> */}
+      </div>
       <div className="md:px-8 py-4 bg-white">
         <Contact />
       </div>

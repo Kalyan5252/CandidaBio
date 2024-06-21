@@ -35,12 +35,12 @@ const HeroSlideShow = () => {
   return (
     <Link
       href="/products"
-      className="w-5/6 h-3/6 flex items-center justify-center relative md:w-4/6 md:h-full slideBg rounded-[35px] border-[2px] border-gray-500"
+      className="w-5/6 h-3/6 flex items-center justify-center relative md:w-5/6 md:h-full slideBg rounded-[35px] border-[2px] border-gray-500"
     >
       <div className="sceneground hidden md:block"></div>
-      <div className="hover opacity-0 absolute z-[100000] w-full h-full flex items-center justify-center font-bold bg-[rgba(0,0,0,0.5)] text-white md:text-2xl rounded-[35px]">
-        Click here to show more
-      </div>
+      {/* <div className="hover opacity-0 absolute z-[100000] w-full h-full flex items-center justify-center font-bold bg-[rgba(0,0,0,0.5)] text-white md:text-2xl rounded-[35px]">
+
+      </div> */}
       <div className="w-full h-full flex justify-center items-center overflow-hidden pointer-events-none scrollNone">
         <div className="w-full h-max z-10 slider transition-all scrollNone">
           <div className="w-full h-full flex scrollNone">

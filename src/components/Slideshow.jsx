@@ -6,8 +6,12 @@ const Slideshow = () => {
   const [slides, setSlides] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef(null);
+  // const [allSlides, setAllSlides] = useState(null);
+  const slideRef = useRef([]);
+
   useEffect(() => {
     const allSlides = document.querySelectorAll('.pSlide');
+
     const slideContainer = document.querySelector('.SlidesContainer');
     setSlides(allSlides.length);
     const updateSlides = () => {
@@ -37,7 +41,7 @@ const Slideshow = () => {
           }px)`;
         } else {
           slideContainer.style.transform = `translateX(-${
-            87.8 * currentSlide
+            85.1 * currentSlide
           }%)`;
         }
       } else {
@@ -47,6 +51,14 @@ const Slideshow = () => {
       //   allSlides[currentSlide % allSlides.length].getBoundingClientRect()
       // );
       setCurrentSlide((currentSlide + 1) % allSlides.length);
+      for (let i = 0; i < slides; i++) {
+        if (currentSlide == i) {
+          slideRef.current[i].style.background = 'rgb(156 163 175)';
+        } else {
+          slideRef.current[i].style.background = 'rgb(229 231 235)';
+        }
+      }
+      // slideRef.current[currentSlide].style.background = 'rgb(229 231 235)';
     };
     intervalRef.current = setInterval(updateSlides, 2000);
     return () => {
@@ -54,7 +66,7 @@ const Slideshow = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [currentSlide]);
+  }, [currentSlide, slides]);
 
   return (
     <div className="overflow-x-scroll pointer-events-none mt-10 scrollNone">
@@ -82,13 +94,13 @@ const Slideshow = () => {
           width={300}
           className="pSlide deactivated transition-all"
         />
-        <Image
+        {/* <Image
           src="/images/CRD009.jpg"
           alt="slide"
           height={300}
           width={300}
           className="pSlide deactivated transition-all"
-        />
+        /> */}
         <Image
           src="/images/CRD006.jpg"
           alt="slide"
@@ -131,13 +143,28 @@ const Slideshow = () => {
           width={300}
           className="pSlide deactivated transition-all"
         />
-        <Image
+        {/* <Image
           src="/images/PADDY.jpeg"
           alt="slide"
           height={300}
           width={300}
           className="pSlide deactivated lastSlide transition-all"
-        />
+        /> */}
+      </div>
+
+      <div className="flex justify-center gap-1">
+        {slides &&
+          Array.from({ length: slides }, (_, i) => i).map((_, i) => {
+            return (
+              <span
+                key={i}
+                className="mx-2 w-3 h-3 bg-gray-200 rounded-full relative"
+                ref={(el) => {
+                  slideRef.current[i] = el;
+                }}
+              ></span>
+            );
+          })}
       </div>
     </div>
   );

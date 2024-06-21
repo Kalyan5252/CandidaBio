@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  /* font-family:  */
 }
 
 .flex-center {
@@ -206,4 +207,12 @@ form .label {
   outline: none;
   background: transparent;
   @apply bg-transparent bg-none outline-[0];
+}
+.abImg {
+  max-height: 300px;
+  overflow: hidden;
+  /* @apply */
+}
+.abImgContainer {
+  @apply pb-4 border-[1px] border-gray-600 relative bg-[#1e1e1e] text-white rounded-lg flex flex-col items-center justify-center gap-4;
 }

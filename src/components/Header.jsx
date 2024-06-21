@@ -25,19 +25,28 @@ const Header = () => {
       className={`${
         istop
           ? 'bg-[#07141C] flex-between'
-          : 'bg-[#1e1e1e] flex flex-between  md:bg-transparent md:justify-center'
+          : 'bg-[#1e1e1e] flex justify-between md:bg-transparent md:justify-center'
       } p-4 fixed top-0 left-0 w-full z-50`}
     >
       {/* // <div className="flex-between p-4 bg-[#F9FBF2] fixed top-0 left-0 w-full z-10"> */}
-      <Image
-        src="/images/CandidaLogo-1.png"
-        alt="logo"
-        height={50}
-        width={50}
-        className={`rounded-full hidden md:block ${
-          istop ? 'md:opacity-1' : 'md:opacity-0'
-        }`}
-      />
+      <div className="flex-center gap-4">
+        <Image
+          src="/images/CandidaLogo-1.png"
+          alt="logo"
+          height={50}
+          width={50}
+          className={`rounded-full hidden md:block ${
+            istop ? 'md:opacity-1' : 'md:opacity-0'
+          }`}
+        />
+        <div
+          className={`${
+            istop ? 'block' : 'md:hidden'
+          } text-gray-300 font-bold text-2xl`}
+        >
+          Candida
+        </div>
+      </div>
       <div
         className={`hidden md:flex ${
           istop
@@ -58,13 +67,13 @@ const Header = () => {
           Contact Us
         </Link>
       </div>
-      <div
+      {/* <div
         className={`${
           istop ? 'block' : 'md:hidden'
         } text-gray-300 font-bold text-2xl`}
       >
         Candida
-      </div>
+      </div> */}
       <div className="block md:hidden ">
         <button onClick={handleNavbar}>
           <Image src="/icons/menu.svg" alt="menu" height={25} width={25} />
