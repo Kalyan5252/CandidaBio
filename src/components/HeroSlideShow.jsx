@@ -44,7 +44,7 @@ const HeroSlideShow = () => {
       <div className="w-full h-full flex justify-center items-center overflow-hidden pointer-events-none scrollNone">
         <div className="w-full h-max z-10 slider transition-all scrollNone">
           <div className="w-full h-full flex scrollNone">
-            <div className="min-w-full  flex items-center justify-center productContainer productSlide ">
+            <div className="min-w-full flex items-center justify-center productContainer productSlide ">
               <Image
                 src="/images/product_6.png"
                 alt=""

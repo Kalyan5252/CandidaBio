@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import CircularProgress from '@mui/material/CircularProgress';
+import Link from 'next/link';
 
 const page = ({ params }) => {
   const titles = {
@@ -148,10 +149,13 @@ const page = ({ params }) => {
                       </div>
                     )}
                 </div>
-                <div className="p-4 justify-self-start">
-                  <button className="font-bold rounded-lg bg-black text-white p-4 w-full hover:shadow-lg transition-all">
+                <div className="p-4 w-full">
+                  <Link
+                    href="/#contactUs"
+                    className="font-bold rounded-lg bg-black text-white p-4 flex items-center justify-center text-center w-full hover:shadow-lg transition-all"
+                  >
                     Contact Us
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

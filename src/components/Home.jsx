@@ -28,7 +28,7 @@ export const Home = () => {
           {/* <div className="px-4 items-center justify-center gap-4"> */}
           <div className="w-full flex p-12 flex-col justify-center items-center gap-8 md:gap-4">
             <div className="flex flex-col items-center">
-              <h1 className="flex p-4 items-center flex-col font-bold lg:text-[4rem] text-[1.5rem] text-center md:text-[2rem] uppercase text-white">
+              <h1 className="flex p-4  items-center flex-col leading-[2rem] md:leading-[2rem] lg:leading-[4rem] lg:text-[4rem] text-[1.5rem] text-center md:text-[2rem] uppercase text-white">
                 Organic solutions for <br />
                 aquaculture & Agriculture
               </h1>
@@ -37,13 +37,13 @@ export const Home = () => {
             <div className="flex flex-col md:flex-row gap-4">
               <Link
                 href="/products"
-                className="px-4 py-3 bg-[#5FA53E] flex-center rounded-lg text-sm md:text-lg text-black text-center"
+                className="px-6 py-3 bg-[#5FA53E] flex-center rounded-lg text-sm md:text-lg text-black text-center"
               >
                 <button>Our Products</button>
               </Link>
               <Link
                 href="/#contactUs"
-                className="px-4 py-3 flex-center outline outline-[#5FA53E] text-[#5FA53E] rounded-lg"
+                className="px-6 py-3 flex-center outline outline-[#5FA53E] text-[#5FA53E] rounded-lg"
               >
                 <button>Contact Us</button>
               </Link>
@@ -78,7 +78,7 @@ export const Home = () => {
       </div>
 
       <div
-        className="w-full md:h-[100vh]  p-8 md:pt-28 md:p-12 flex flex-col gap-12"
+        className="w-full h-full p-4 lg:pt-24 md:p-4 lg:p-8 flex flex-col gap-12"
         id="highlights"
       >
         {/* <div className="flex justify-between items-center w-full">
@@ -88,24 +88,41 @@ export const Home = () => {
           </Link>
         </div> */}
 
+        <div className="w-full h-5/6 flex-center md:rounded-full rounded-[35px]">
+          <Image
+            src="/images/bg-1.png"
+            alt="Image"
+            height={200}
+            width={500}
+            className="w-5/6"
+          />
+        </div>
+      </div>
+
+      <div className="md:mt-0 lg:mb-12 w-full md:flex md:p-2 p-10 lg:p-10 items-center justify-center md:min-h-[30vh] lg:min-h-[50vh] text-[#D0D0D0] bg-[#07141C]">
+        <p className="font-medium lg:text-5xl md:text-4xl text-xl text-left md:max-w-[30ch] md:leading-[4rem] lg:leading-[4rem] leading-[2rem]">
+          Promote organic farming methods and natural biotechnological
+          formulations to enhance sustainability and benefit the agriculture &
+          aquaculture.
+        </p>
+      </div>
+
+      <div className="w-full bg-white">
+        <AboutUs />
+      </div>
+
+      <div
+        className="w-full md:h-[100vh] p-8  md:p-12 flex flex-col gap-12"
+        id="highlights"
+      >
+        <h1 className="text-[#d0d0d0] font-bold text-4xl">Products</h1>
         <div className="w-full h-full md:rounded-full rounded-[35px]">
           <div className="w-ful h-full flex items-center justify-center overflow-y-auto">
             <HeroSlideShow />
           </div>
         </div>
       </div>
-
-      <div className="md:mt-0 w-full md:flex p-10 items-center justify-center md:min-h-[50vh] text-[#D0D0D0] bg-[#07141C]">
-        <p className="font-medium md:text-4xl text-xl text-left md:text-center md:max-w-[30ch] md:leading-[4rem] leading-[2rem]">
-          Promote organic farming methods and natural biotechnological
-          formulations to enhance sustainability and benefit the agriculture &
-          aquaculture.
-        </p>
-      </div>
-      <div className="w-full bg-white">
-        <AboutUs />
-      </div>
-      <div className="md:px-8 py-4 bg-white">
+      <div className="md:px-8 py-4 bg-[#d0d0d0]">
         <Contact />
       </div>
     </main>
