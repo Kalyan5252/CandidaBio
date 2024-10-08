@@ -12,7 +12,7 @@ const IMAGES = [
     alt: 'img2',
   },
   {
-    path: '/images/FARMER.jpeg',
+    path: '/images/farmer.jpeg',
     alt: 'img3',
   },
   {
