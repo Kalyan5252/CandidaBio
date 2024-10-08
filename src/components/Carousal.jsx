@@ -5,39 +5,39 @@ import Image from 'next/image';
 const IMAGES = [
   {
     path: '/images/CRD007.jpg',
-    alt: 'img1',
+    alt: 'img',
   },
   {
     path: '/images/CRD003.jpeg',
-    alt: 'img2',
+    alt: 'img',
   },
   {
-    path: '/images/farmer.jpeg',
-    alt: 'img3',
+    path: '/images/farming.jpeg',
+    alt: 'img',
   },
   {
     path: '/images/GRAPE.jpeg',
-    alt: 'img3',
+    alt: 'img',
   },
   {
     path: '/images/CRD006.jpg',
-    alt: 'img4',
+    alt: 'img',
   },
   {
     path: '/images/CRD001.jpg',
-    alt: 'img5',
+    alt: 'img',
   },
   {
     path: '/images/PEPPER.jpeg',
-    alt: 'img5',
+    alt: 'img',
   },
   {
     path: '/images/20240429_101636.jpg',
-    alt: 'img1',
+    alt: 'img',
   },
   {
     path: '/images/aqua.png',
-    alt: 'img1',
+    alt: 'img',
   },
 ];
 

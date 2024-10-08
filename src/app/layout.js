@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={GeistSans.className}>
         <ContextProvider>{children}</ContextProvider>
-        {/* {children} */}
       </body>
     </html>
   );
