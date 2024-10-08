@@ -220,6 +220,21 @@ const page = ({ params }) => {
                   );
               })}
             </div>
+            {data.certificate && (
+              <div className="bg-gradient-to-r from-blue-800 to-blue-950 text-white rounded-lg min-h-32 p-8 flex flex-col gap-4 md:flex-row justify-around items-center">
+                <div className="flex flex-col gap-2 items-center">
+                  <p className="font-bold text-xl">CAA Product Certificate</p>
+                  <p className="font-light text-xl">{data.certificateNo}</p>
+                </div>
+                <Link
+                  href={`/certificates/${data.certificate}`}
+                  target="__blank"
+                  className="px-4 py-2 bg-white shadow-xl text-[#07141C] font-bold rounded-lg"
+                >
+                  Download Certificate
+                </Link>
+              </div>
+            )}
           </div>
         )}
         {!data && (

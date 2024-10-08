@@ -14,7 +14,7 @@ const AboutUs = () => {
                 alt="person"
                 height={350}
                 width={300}
-                className="rounded-lg"
+                className="rounded-lg max-w-[200px] max-h-[250px] md:max-w-[300px] md:max-h-[350px]"
               />
             </div>
 
@@ -30,7 +30,7 @@ const AboutUs = () => {
                 alt="person"
                 height={350}
                 width={300}
-                className="rounded-lg"
+                className="rounded-lg max-w-[200px] max-h-[250px] md:max-w-[300px] md:max-h-[350px]"
               />
             </div>
             <div className="flex-center flex-col">
@@ -45,11 +45,27 @@ const AboutUs = () => {
                 alt="person"
                 height={350}
                 width={300}
-                className="rounded-lg"
+                className="rounded-lg max-w-[200px] max-h-[250px] md:max-w-[300px] md:max-h-[350px]"
               />
             </div>
             <div className="flex-center flex-col">
               <h1>Dr. R.SUDHARSHAN REDDY</h1>
+              <h4 className="text-gray-400">Director</h4>
+            </div>
+          </div>
+
+          <div className="abImgContainer">
+            <div className="abImg">
+              <Image
+                src="/people/T_ANANDHA.png"
+                alt="person"
+                height={350}
+                width={300}
+                className="rounded-lg max-w-[200px] max-h-[250px] md:max-w-[300px] md:max-h-[350px]"
+              />
+            </div>
+            <div className="flex-center flex-col">
+              <h1>T.ANANDHA</h1>
               <h4 className="text-gray-400">Director</h4>
             </div>
           </div>

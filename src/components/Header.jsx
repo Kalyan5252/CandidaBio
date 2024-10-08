@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const [istop, setIsTop] = useState(true);
   const [isMobile, setisMobile] = useState(false);
@@ -25,7 +27,8 @@ const Header = () => {
       className={`${
         istop
           ? 'bg-[#07141C] flex-between'
-          : 'bg-[#1e1e1e] flex justify-between md:bg-transparent md:justify-center'
+          : // 'bg-transparent flex-between'
+            'bg-[#1e1e1e] flex justify-between md:bg-transparent md:justify-center'
       } p-4 fixed top-0 left-0 w-full z-50`}
     >
       {/* // <div className="flex-between p-4 bg-[#F9FBF2] fixed top-0 left-0 w-full z-10"> */}
@@ -52,13 +55,16 @@ const Header = () => {
           istop
             ? 'bg-transparent text-[#d0d0d0]'
             : 'bg-[rgba(30,30,30,0.9)] backdrop-blur-sm text-[#d0d0d0]'
-        } z-40 md:shadow-2xl md:flex-center gap-12 p-4 text-lg rounded-lg transition-all`}
+        } z-40  md:flex-center gap-12 p-4 text-lg rounded-lg transition-all`}
       >
         <Link href="/" className="hover:text-white">
           Home
         </Link>
         <Link href="/aboutUs" className="hover:text-white">
           About Us
+        </Link>
+        <Link href="/company" className="hover:text-white">
+          Company
         </Link>
         <Link href="/products" className="hover:text-white">
           Products
@@ -108,6 +114,13 @@ const Header = () => {
                   onClick={handleNavbar}
                 >
                   About Us
+                </Link>
+                <Link
+                  href="/company"
+                  className="hover:text-white"
+                  onClick={handleNavbar}
+                >
+                  Comapany
                 </Link>
                 <Link
                   href="/products"

@@ -216,3 +216,38 @@ form .label {
 .abImgContainer {
   @apply pb-4 border-[1px] border-gray-600 relative bg-[#1e1e1e] text-white rounded-lg flex flex-col items-center justify-center gap-4;
 }
+.blockTop:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to top, transparent, white);
+  /* background: #461487; */
+  top: 0;
+  left: 0;
+}
+
+.blockTop:before {
+  content: '';
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 100px; /* Height of the fade */
+  /* background: linear-gradient(to top, white, transparent); */
+  background: linear-gradient(to bottom, transparent, rgb(255, 255, 255) 70%);
+}
+.heroBg::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.textShadow {
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+}

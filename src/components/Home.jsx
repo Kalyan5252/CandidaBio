@@ -29,7 +29,7 @@ export const Home = () => {
           <div className="w-full flex p-12 flex-col justify-center items-center gap-8 md:gap-4">
             <div className="flex flex-col items-center">
               <h1 className="flex p-4  items-center flex-col leading-[2rem] md:leading-[2rem] lg:leading-[4rem] lg:text-[4rem] text-[1.5rem] text-center md:text-[2rem] uppercase text-white">
-                Organic solutions for <br />
+                Organic solution for <br />
                 aquaculture & Agriculture
               </h1>
               {/* <h2 className="text-xl font-light">Bio Sciences</h2> */}

@@ -34,6 +34,10 @@ const productSchema = mongoose.Schema({
     type: String,
     default: 'cloud',
   },
+  certificate: {
+    type: String,
+    required: false,
+  },
 });
 
 // const products = mongoose.model('products', productSchema);

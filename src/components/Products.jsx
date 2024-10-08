@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ProductContext } from '@/app/context';
-import Slideshow from './Slideshow';
+// import Slideshow from './Slideshow';
+import Carousal from './Carousal';
 import { useRouter } from 'next/navigation';
 
 const Products = () => {
@@ -51,6 +52,10 @@ const Products = () => {
     setData({ products: newData });
   };
 
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery]);
+
   const [signedUrls, setSignedUrls] = useState({});
 
   useEffect(() => {
@@ -76,9 +81,9 @@ const Products = () => {
   return (
     <div className="flex flex-col gap-8 mt-[5rem] md:mt-[7rem]">
       <div className="relative  h-max  p-4 md:px-12">
-        <Slideshow />
+        <Carousal />
 
-        <div className="absolute md:z-40 top-3 md:top-1 right-5 shadow-lg flex-center gap-4 px-4 py-2 rounded-full bg-[#C2C0C0] transition-all">
+        {/* <div className="absolute md:z-40 top-3 md:top-1 right-5 shadow-lg flex-center gap-4 px-4 py-2 rounded-full bg-[#C2C0C0] transition-all">
           <button
             onClick={() => {
               setCategory('agri');
@@ -101,7 +106,7 @@ const Products = () => {
           >
             Aqua
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div
@@ -109,11 +114,61 @@ const Products = () => {
         id="products"
       >
         <div className="flex flex-col gap-4 md:flex-row justify-start md:justify-between md:items-center">
-          <h2 className="text-4xl font-bold">Products</h2>
-          <div className="px-4">
+          <div className="flex justify-between items-center">
+            <h2 className="text-4xl font-bold">Products</h2>
+            <div className="md:hidden flex-center gap-4 rounded-full border-[1px] transition-all">
+              <button
+                onClick={() => {
+                  setCategory('agri');
+                  router.push('/products#products');
+                }}
+                className={`${
+                  category === 'agri' ? 'bg-[#1e1e1e] text-white' : 'text-black'
+                } px-4 py-2 rounded-full`}
+              >
+                Agri
+              </button>
+              <button
+                onClick={() => {
+                  setCategory('aqua');
+                  router.push('/products#products');
+                }}
+                className={`${
+                  category === 'aqua' ? 'bg-[#1e1e1e] text-white' : 'text-black'
+                } px-4 py-2 rounded-full`}
+              >
+                Aqua
+              </button>
+            </div>
+          </div>
+          <div className="px-4 flex gap-2">
+            <div className="hidden md:block focus:shadow-lg justify-center items-center gap-4 rounded-full border-[2px] transition-all">
+              <button
+                onClick={() => {
+                  setCategory('agri');
+                  router.push('/products#products');
+                }}
+                className={`${
+                  category === 'agri' ? 'bg-[#000] text-white' : 'text-black'
+                } px-4 py-2 rounded-full`}
+              >
+                Agri
+              </button>
+              <button
+                onClick={() => {
+                  setCategory('aqua');
+                  router.push('/products#products');
+                }}
+                className={`${
+                  category === 'aqua' ? 'bg-[#000] text-white' : 'text-black'
+                } px-4 py-2 rounded-full`}
+              >
+                Aqua
+              </button>
+            </div>
             <form
               action={handleSearch}
-              className="productForm flex w-full md:w-fit self-end  gap-4 rounded-full shadow-lg border-[1px] border-gray-300 px-4 py-2 md:py-0"
+              className="productForm flex w-full md:w-fit self-end  gap-4 rounded-full focus:shadow-lg border-[1px] border-gray-300 px-4 py-2 md:py-0"
             >
               <input
                 type="text"

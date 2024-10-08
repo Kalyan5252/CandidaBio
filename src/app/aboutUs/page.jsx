@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const about = () => {
   return (
-    <main className="overflow-hidden ">
+    <main className="overflow-hidden">
       <Header />
       <div className="mt-[5rem] md:mt-[7rem] w-full p-8 flex flex-col gap-8 items-center">
         <h1 className=" font-bold text-4xl">About Us</h1>
@@ -62,7 +62,7 @@ const about = () => {
             className="self-center md:self-start hidden md:block"
           />
         </div>
-        <div className="flex md:flex-row flex-col gap-8 p-8 self-center">
+        <div className="flex md:flex-row flex-col gap-8 p-8 self-center border-b-[1px]">
           <Image
             src="/people/B_VASAGAN.jpg"
             alt="ramana"
@@ -85,6 +85,31 @@ const about = () => {
               important Commercial and Vegetable crops.
             </p>
           </div>
+        </div>
+        <div className="flex md:flex-row flex-col gap-8 p-8 self-center ">
+          <Image
+            src="/people/T_ANANDHA.png"
+            alt="sudharshan"
+            height={250}
+            width={250}
+            className="self-center md:self-start block md:hidden"
+          />
+          <div className="flex flex-col gap-4">
+            <h1 className="font-bold text-xl">Mr. T.ANANDHA KUMAR</h1>
+            <h2 className="font-medium">(Director)</h2>
+            <p className="max-w-[60ch]">
+              Diploma in Fisheries Technology from CIT,  Chennai, engaged in
+              promoting the company with his experience of positive marketing
+              practices,  the key factor of  growth of the company.
+            </p>
+          </div>
+          <Image
+            src="/people/T_ANANDHA.png"
+            alt="Anandha"
+            height={250}
+            width={250}
+            className="self-center md:self-start hidden md:block"
+          />
         </div>
       </div>
     </main>
