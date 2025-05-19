@@ -27,7 +27,7 @@ export const HomeCopy = () => {
         <div className="grid w-full gap-4">
           {/* <div className="px-4 items-center justify-center gap-4"> */}
           <div
-            className="w-full md:h-[80vh] relative heroBg flex p-12 flex-col justify-center items-center gap-8 md:gap-4"
+            className="w-full md:h-[90vh] relative heroBg flex p-12 flex-col justify-center items-center gap-8 md:gap-4"
             style={{
               background: 'url(/images/PEPPER.jpeg)',
               objectFit: 'contain',
@@ -117,9 +117,9 @@ export const HomeCopy = () => {
         </p>
       </div>
 
-      <div className="w-full bg-white">
+      {/* <div className="w-full bg-white">
         <AboutUs />
-      </div>
+      </div> */}
 
       <div
         className="w-full md:h-[100vh] p-8  md:p-12 flex flex-col gap-12"
@@ -131,6 +131,9 @@ export const HomeCopy = () => {
             <HeroSlideShow />
           </div>
         </div>
+      </div>
+      <div className="w-full bg-white">
+        <AboutUs />
       </div>
       <div className="md:px-8 py-4 bg-[#d0d0d0]">
         <Contact />

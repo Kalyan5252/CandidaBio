@@ -4,8 +4,9 @@ import mongoose from 'mongoose';
 import startDb from '@/app/lib/db';
 import Products from '@/models/productModel';
 await startDb();
-export async function GET(req) {
+export async function GET() {
   const allProducts = await Products.find();
+  // console.log(allProducts);
   if (!allProducts)
     return NextResponse.status(500).json({
       status: 'failure',

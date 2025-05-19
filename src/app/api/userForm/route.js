@@ -16,7 +16,7 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const data = await req.json();
-    console.log(data);
+    // console.log(data);
     // const newData = await userForms.create(data);
     if (!newData) throw new Error('Cannot Submit Message');
     return NextResponse.json(

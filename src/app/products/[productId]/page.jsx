@@ -25,7 +25,7 @@ const page = ({ params }) => {
         // console.log('get json:', json.products[0]);
         // console.log('get data:', data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     };
     getData();

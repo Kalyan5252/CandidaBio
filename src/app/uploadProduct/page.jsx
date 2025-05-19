@@ -92,6 +92,7 @@ const page = () => {
         pauseOnHover: false,
         type: 'success',
       });
+      window.location.assign('/dashboard');
     } else {
       setTimeout(() => {
         window.location.reload();

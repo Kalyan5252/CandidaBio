@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const login = () => {
   const router = useRouter();
   useEffect(() => {
-    console.log('verfication');
+    // console.log('verfication');
     const verify = async () => {
       const res = await fetch('/api/auth/', {
         method: 'GET',

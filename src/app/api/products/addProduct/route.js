@@ -9,7 +9,6 @@ import fs from 'fs';
 import path from 'path';
 
 await startDb();
-
 // const upload = multer({
 //   storage: multer.diskStorage({
 //     destination: './public/uploads',
@@ -33,15 +32,12 @@ export async function POST(req) {
     console.log(image);
     const fileBuffer = await image.arrayBuffer();
     const fileName = `${name.split('.')[0]}_${Date.now()}.png`;
-    // const filePath = path.join(process.cwd(), 'public', 'products', fileName);
 
-    // await upload(Buffer.from(fileBuffer), fileName);
     const res = await upload(Buffer.from(fileBuffer), fileName);
-    console.log('res:', res);
-    // await fs.promises.writeFile(filePath, Buffer.from(fileBuffer));
-    console.log('upload done');
+    // console.log('res:', res);
+    // console.log('upload done');
     data.productImage = res.Key;
-    console.log(data);
+    // console.log(data);
     const newProduct = await Products.create(data);
     return NextResponse.json({
       status: 'POST Success',

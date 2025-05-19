@@ -29,7 +29,7 @@ const Header = () => {
           ? 'bg-[#07141C] flex-between'
           : // 'bg-transparent flex-between'
             'bg-[#1e1e1e] flex justify-between md:bg-transparent md:justify-center'
-      } p-4 fixed top-0 left-0 w-full z-50`}
+      } px-2 pt-2 fixed top-0 left-0 w-full z-50`}
     >
       {/* // <div className="flex-between p-4 bg-[#F9FBF2] fixed top-0 left-0 w-full z-10"> */}
       <div className="flex-center gap-4">

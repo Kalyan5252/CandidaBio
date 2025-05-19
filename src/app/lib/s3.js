@@ -14,14 +14,14 @@ const s3 = new S3({
 
 export async function upload(fileBuffer, name) {
   //   const fileStream = fs.createReadStream(file);
-  console.log('got into fileStream');
+  // console.log('got into fileStream');
   const uploadParams = {
     Bucket: bucketName,
     Body: fileBuffer,
     Key: name,
   };
-  console.log('AWS_BUCKET_NAME:', bucketName);
-  console.log('AWS_BUCKET_REGION:', region);
+  // console.log('AWS_BUCKET_NAME:', bucketName);
+  // console.log('AWS_BUCKET_REGION:', region);
   // console.log('AWS_ACCESS_KEY:', process.env.AWS_ACCESS_KEY);
   // console.log('AWS_SECRET_KEY:', process.env.AWS_SECRET_KEY);
   try {
